@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TextField from '@material-ui/core/TextField';
 import { Button } from '@material-ui/core';
-
+ 
 export default class HomePage extends Component {
     constructor() {
         super();
@@ -19,7 +19,7 @@ export default class HomePage extends Component {
     }
 
     onClick = () => {
-        fetch('http://localhost:3001/', {
+        fetch(`${window.location.protocol}//${window.location.host}:3001`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

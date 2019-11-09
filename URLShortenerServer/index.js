@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var app = express()
 var cors = require('cors');
 var mysql = require('mysql');
-var config = require('config.json')
+var config = require('./config.json')
 
 app.use(bodyParser.urlencoded({
     extended: false
@@ -46,9 +46,7 @@ app.get('/:id', function(req, res){
         } else {
             res.sendStatus(400);
         }
-
     });
-
 });
 
 app.listen(3001);

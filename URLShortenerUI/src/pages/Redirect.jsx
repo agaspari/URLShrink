@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Redirect extends Component {
     componentDidMount() {
         console.log(this.props.match.params.id);
-        fetch(`http://localhost:3001/${this.props.match.params.id}`, {
+        fetch(`${window.location.protocol}//${window.location.host}:${window.location.port}/${this.props.match.params.id}`, {
             method: 'GET',
         })
         .then(res => res.json())
