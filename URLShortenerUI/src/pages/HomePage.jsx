@@ -19,7 +19,7 @@ export default class HomePage extends Component {
     }
 
     onClick = () => {
-        fetch(`${window.location.protocol}//${window.location.host}:3001`, {
+        fetch(`${window.location.protocol}//${window.location.hostname}:3001`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
