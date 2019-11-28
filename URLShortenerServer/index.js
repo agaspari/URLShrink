@@ -14,7 +14,7 @@ app.use(cors());
 var mysql = require('mysql');
 
 function connect(){
-	con = mysql.createConnection(db_config);
+	con = mysql.createConnection(config.database);
 	con.connect(function(err){
 		if(err){
 			console.log("Error when connection to db:", err);
