@@ -17,7 +17,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy:prod": "rsync -avzhe ssh --progress ./public/* root@agaspari.com:/root/agaspari.com"
+    "deploy:prod": "rsync -avzhe ssh --progress ./public/* root@157.245.240.54:/root/agaspari.com"
   },
   "eslintConfig": {
     "extends": "react-app"
