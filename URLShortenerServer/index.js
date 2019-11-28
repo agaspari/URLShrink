@@ -13,12 +13,24 @@ app.use(cors());
 
 var mysql = require('mysql');
 
-var con = mysql.createConnection(config.database);
-
-con.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
+function connect(){
+	con = mysql.createConnection(db_config);
+	con.connect(function(err){
+		if(err){
+			console.log("Error when connection to db:", err);
+			setTimeout(handleDisconnect, 5000);
+		}
+	});
+	
+	con.on("error", function(err){
+		console.log("DB Error", err);
+		if(err.code == "PROTOCOL_CONNECTION_LOST"){
+			handleDisconnect();
+		} else {
+			throw err;
+		}
+	});
+}
 
 app.post('/', function(req, res){
     console.log(req.body);
@@ -49,6 +61,7 @@ app.get('/:id', function(req, res){
     });
 });
 
+connect();
 app.listen(3001);
 console.log("Server Started");
 
