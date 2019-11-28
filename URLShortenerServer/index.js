@@ -25,7 +25,7 @@ function connect(){
 	con.on("error", function(err){
 		console.log("DB Error", err);
 		if(err.code == "PROTOCOL_CONNECTION_LOST"){
-			handleDisconnect();
+			connect();
 		} else {
 			throw err;
 		}
