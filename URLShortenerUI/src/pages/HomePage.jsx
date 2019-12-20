@@ -38,7 +38,6 @@ export default class HomePage extends Component {
     }
 
     render() {
-        
         return(
             <div>
                 <div class="page-header">
@@ -50,7 +49,6 @@ export default class HomePage extends Component {
                             id="url"
                             label="Url"
                             name="url"
-                            // className={this.classes.textField}
                             value={this.state.url}
                             onChange={(e) => this.onChange(e, e.target.value)}
                             margin="normal"
